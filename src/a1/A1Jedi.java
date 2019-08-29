@@ -59,6 +59,14 @@ public class A1Jedi {
 				//System.out.println("What item is in item slot " + (k+1) + "?");
 				String item = scan.next();
 				int [] custBought = new int[storNumItems];
+				for(int q = 0; q<storNumItems;q++)
+				{
+					custBought[q] = 0;
+				}
+				for(int q = 0; q<storNumItems; q++)
+				{
+					custBought[q] = numCustomersPurchased[q];
+				}
 				for(int r = 0; r<storNumItems; r++)
 				{
 					
@@ -68,7 +76,6 @@ public class A1Jedi {
 						if(custBought[r] == 0)
 						{
 							numCustomersPurchased[r] = (numCustomersPurchased[r]+1);
-							custBought[r] = custBought[r]+1;
 
 						}
 					}
