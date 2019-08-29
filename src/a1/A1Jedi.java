@@ -58,19 +58,25 @@ public class A1Jedi {
 				
 				//System.out.println("What item is in item slot " + (k+1) + "?");
 				String item = scan.next();
-				
+				int [] custBought = new int[storNumItems];
 				for(int r = 0; r<storNumItems; r++)
 				{
 					
 					if(items[r].equals(item))
 					{
 						itemIdentifier = r;
-						numCustomersPurchased[r] = (numCustomersPurchased[r]+1);
+						if(custBought[r] == 0)
+						{
+							numCustomersPurchased[r] = (numCustomersPurchased[r]+1);
+							custBought[r] = custBought[r]+1;
+
+						}
 					}
 				}
 				numOfItemPurchased[itemIdentifier] = (numOfItemPurchased[itemIdentifier] + count);
 				
 			}
+			
 		}
 		
 		for(int e = 0;e<numberOfCustomers;e++)
